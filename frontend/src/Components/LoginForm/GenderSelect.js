@@ -4,12 +4,12 @@ const GenderSelect = ({
     handleChange,
     genderError
 }) => {
-        const View1 = useMediaQuery({
-    query: "(min-width: 539px)"
-   })
-  const View2 = useMediaQuery({
-    query: "(min-width: 768px)"
-   })
+  //       const View1 = useMediaQuery({
+  //   query: "(min-width: 539px)"
+  //  })
+  // const View2 = useMediaQuery({
+  //   query: "(min-width: 768px)"
+  //  })
   const View3 = useMediaQuery({
     query: "(min-width: 1170px)"
    })

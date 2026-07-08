@@ -1,8 +1,7 @@
-import { Field, Formik } from "formik"
+import { Formik } from "formik"
 import RegisterInput from "../../Inputs/RegisterInput"
 import { useEffect, useState } from "react";
 import { registerSchema } from "../../formValidation";
-import { object } from "yup";
 import DateOfbirth from "./DateOfbirth";
 import GenderSelect from "./GenderSelect";
 import { FadeLoader } from "react-spinners";
@@ -101,7 +100,7 @@ const registerSubmit = async (payload)=>{
             validationSchema={registerSchema}
             onSubmit={(values)=>{
                 //  console.log("current values ", values)
-                const dob = `${values.bYear}-${values.bMonth}-${values.bDay}`
+                // const dob = `${values.bYear}-${values.bMonth}-${values.bDay}`
                const payload = {
                         first_name: values.first_name,
                         last_name: values.last_name,
