@@ -9,11 +9,19 @@ const connectDB = require("./Db")
 const app = express()
 
 
-const Options = {
-    origin: "http://localhost:3000"
-}
+// const Options = {
+//     origin: "http://localhost:3000"
+// }
 
-app.use(cors(Options))
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://facebook-gamma-sepia.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 connectDB()
 
