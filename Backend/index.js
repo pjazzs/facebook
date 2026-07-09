@@ -23,7 +23,28 @@ const app = express()
 //   })
 // );
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://facebook-gamma-sepia.vercel.app",
+  "https://facebook-mut68dtf1-progress-projects-63901fb1.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (e.g. Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
+// app.use(cors());
 connectDB()
 
 app.use(express.json())
