@@ -13,16 +13,17 @@ const app = express()
 //     origin: "http://localhost:3000"
 // }
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://facebook-gamma-sepia.vercel.app",
-    ],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3000",
+//       "https://facebook-gamma-sepia.vercel.app",
+//     ],
+//     credentials: true,
+//   })
+// );
 
+app.use(cors());
 connectDB()
 
 app.use(express.json())
